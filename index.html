@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ee">
+  <meta name="description" content="16 вопросов про борзых, их привычки и длинные носы. Небольшой квиз без таймера, с хорошими собаками и мемами.">
+  <title>Нос к носу — квиз про борзых</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/questions.js" defer></script>
+  <script src="./js/app.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="cross" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="bow" viewBox="0 0 64 40"><path d="M30 19C20-3 3 2 8 15c3 7 17 9 22 4Zm4 0C44-3 61 2 56 15c-3 7-17 9-22 4ZM30 21c-2 9-8 13-15 14m19-14c2 9 8 13 15 14"/><ellipse cx="32" cy="20" rx="4" ry="5"/></symbol>
+  </svg>
+
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="Нос к носу — на главную">
+        <svg class="brand-dog" viewBox="0 0 76 48" fill="none" aria-hidden="true"><path d="M10 31c11-2 18-9 28-17 4-3 9-3 13-1l10 5c4 1 6 5 5 9l-2 13M11 31c-5 0-6 7 0 8l27 1c6 0 10-3 12-7m-2-17c-6 2-8 7-8 12 0 6 7 7 9 2l4-11"/><path d="M9 32c-4 0-4 5 0 5h5v-5H9Z" fill="currentColor"/><circle cx="35" cy="22" r="1.6" fill="currentColor"/></svg>
+        <span>нос к носу<span class="brand-caption">квиз про борзых</span></span>
+      </a>
+      <span class="header-note"><span class="little-dot" aria-hidden="true"></span><span><span data-question-total>16</span> вопросов · без таймера</span></span>
+    </header>
+
+    <main id="main">
+      <section id="screen-start" class="screen intro" aria-labelledby="intro-title">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Для любителей длинных носов</p>
+          <h1 id="intro-title" class="title-relief" tabindex="-1">Длинный нос.<br><em>Большая любовь.</em></h1>
+          <p class="intro-description">16 вопросов про борзых: почему они мёрзнут, как быстро бегают и что вообще у них с носом.</p>
+          <button class="button button-primary" id="start-button" type="button">Начать квиз <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></button>
+          <p class="button-note">Без таймера. Можно ошибаться.</p>
+        </div>
+
+        <div class="intro-album" aria-label="Две борзые на фотографиях">
+          <span class="album-annotation annotation-top" aria-hidden="true">главный по носам</span>
+          <svg class="annotation-arrow" viewBox="0 0 80 58" fill="none" aria-hidden="true"><path d="M72 3C36 0 28 17 30 45m-11-9 11 11 11-11"/></svg>
+          <figure class="photo photo-main">
+            <span class="paper-tape" aria-hidden="true"></span>
+            <div class="photo-mat mat-blue"><img src="./assets/images/image copy 13.png" alt="Любопытная борзая с большим носом" width="1080" height="1920" fetchpriority="high"></div>
+            <figcaption>да, это мой хороший ракурс</figcaption>
+          </figure>
+          <figure class="photo photo-small">
+            <div class="photo-mat mat-pink"><img src="./assets/images/image copy 5.png" alt="Борзая в очках" width="1080" height="1920"></div>
+            <figcaption>я готовился</figcaption>
+          </figure>
+          <svg class="album-bow" aria-hidden="true"><use href="#bow"/></svg>
+          <span class="album-annotation annotation-bottom" aria-hidden="true">и его научный консультант</span>
+        </div>
+
+        <div class="intro-rules">
+          <span class="rules-label">Всё просто</span>
+          <p>Верный ответ — нос чуть длиннее.<br>Три верных подряд — мем в подарок.</p>
+          <svg class="rules-bow" aria-hidden="true"><use href="#bow"/></svg>
+        </div>
+      </section>
+
+      <section id="screen-quiz" class="screen quiz" aria-labelledby="question-title" hidden>
+        <div class="quiz-heading">
+          <p class="eyebrow">Вопрос <span id="question-number">01</span><span class="count-divider">/</span><span data-question-total>16</span></p>
+          <p class="score-label">Верных ответов <strong id="score">0</strong></p>
+        </div>
+        <ol id="progress" class="progress" aria-label="Прогресс квиза"></ol>
+        <div class="quiz-layout">
+          <div class="question-card">
+            <span id="question-category" class="category"></span>
+            <h1 id="question-title" class="question-title" tabindex="-1"></h1>
+            <p id="answer-instruction" class="answer-instruction">Выбери один ответ</p>
+            <div id="answers" class="answers" role="group" aria-labelledby="question-title" aria-describedby="answer-instruction"></div>
+            <div id="feedback" class="feedback" role="status" aria-live="polite" aria-atomic="true"></div>
+            <div class="question-bottom">
+              <span id="next-hint" class="next-hint">Никуда не торопимся</span>
+              <button id="next-button" class="button button-primary button-next" type="button" hidden>Дальше <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></button>
+            </div>
+          </div>
+          <aside class="companion" aria-label="Твой напарник и носомер">
+            <figure class="photo companion-photo">
+              <span class="paper-tape" aria-hidden="true"></span>
+              <div class="photo-mat mat-blue"><img id="companion-image" src="./assets/images/image copy 14.png" alt="Борзая ждёт твоего ответа" width="1080" height="1920"></div>
+              <figcaption id="companion-caption">думаем вместе</figcaption>
+            </figure>
+            <div class="nose-meter">
+              <div class="nose-heading"><h2>Носомер</h2><span><strong id="nose-value">0</strong> см</span></div>
+              <div id="nose-progress" class="nose-track" role="progressbar" aria-label="Длина носа" aria-valuemin="0" aria-valuemax="31" aria-valuenow="0"><span id="nose-fill" class="nose-fill"></span></div>
+              <div class="nose-scale" aria-hidden="true"><span>0</span><span>31 см</span></div>
+              <p>Каждый верный ответ<br>делает нос чуть длиннее.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="screen-result" class="screen result" aria-labelledby="result-title" hidden>
+        <div class="result-layout">
+          <div class="result-copy">
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Все носы посчитаны</p>
+            <h1 id="result-title" class="title-relief" tabindex="-1"></h1>
+            <p id="result-description" class="result-description"></p>
+            <dl class="result-stats">
+              <div><dt>Верных ответов</dt><dd><span id="result-score">0</span><span class="stat-total"> / <span data-question-total>16</span></span></dd></div>
+              <div><dt>Длина носа</dt><dd><span id="result-nose">0</span><span class="stat-total"> см</span></dd></div>
+            </dl>
+            <div class="result-actions">
+              <button id="restart-button" class="button button-primary" type="button">Пройти ещё раз <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></button>
+              <button id="home-button" class="button button-text" type="button">На главную</button>
+            </div>
+          </div>
+          <figure class="photo result-photo">
+            <span class="paper-tape" aria-hidden="true"></span>
+            <div class="photo-mat mat-pink"><img id="result-image" src="./assets/images/image copy 8.png" alt="Довольная борзая" width="1080" height="1920"></div>
+            <figcaption>в любом случае, ты мой человек</figcaption>
+          </figure>
+        </div>
+        <details id="answer-review" class="answer-review">
+          <summary>Посмотреть ответы <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></summary>
+          <ol id="review-list" class="review-list"></ol>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer"><svg aria-hidden="true"><use href="#bow"/></svg><span>Маленький квиз для любителей борзых</span></footer>
+  </div>
+
+  <dialog id="bonus-dialog" class="bonus-dialog" aria-labelledby="bonus-title" aria-describedby="bonus-description">
+    <div class="bonus-content">
+      <button id="bonus-close" class="button-close" type="button" aria-label="Закрыть мем и продолжить"><svg class="icon" aria-hidden="true"><use href="#cross"/></svg></button>
+      <p class="eyebrow">Маленький перерыв</p>
+      <h2 id="bonus-title">Этот мем — тебе.</h2>
+      <p id="bonus-description">За три верных ответа подряд.</p>
+      <img id="bonus-image" class="bonus-image" alt="" width="736" height="727">
+      <button id="bonus-continue" class="button button-primary" type="button">Идём дальше <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></button>
+    </div>
+  </dialog>
+  <noscript><p class="noscript-message">Для квиза нужен JavaScript. Включи его в настройках браузера и обнови страницу.</p></noscript>
+</body>
+</html>
