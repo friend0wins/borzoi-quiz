@@ -7,7 +7,7 @@
   const imagePath = (file) => `./assets/images/${file}`;
   const byId = (id) => document.getElementById(id);
   const ui = {
-    screens: ['screen-start', 'screen-quiz', 'screen-result'].map(byId),
+    screens: ['screen-start', 'screen-quiz', 'screen-result', 'screen-features'].map(byId),
     question: byId('question-title'),
     category: byId('question-category'),
     number: byId('question-number'),
@@ -36,6 +36,10 @@
 
   function showScreen(id) {
     for (const screen of ui.screens) screen.hidden = screen.id !== id;
+    document.querySelectorAll('[data-screen-target]').forEach((button) => {
+      button.classList.toggle('is-active', button.dataset.screenTarget === id || (id === 'screen-quiz' && button.dataset.screenTarget === 'screen-start'));
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function makeIcon(name) {
@@ -264,6 +268,18 @@
     });
     ui.reviewList.replaceChildren(...items);
   }
+
+  document.querySelectorAll('[data-screen-target]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const target = button.dataset.screenTarget;
+      if (target === 'screen-start') {
+        resetState();
+        showScreen('screen-start');
+      } else {
+        showScreen(target);
+      }
+    });
+  });
 
   byId('start-button').addEventListener('click', startQuiz);
   byId('restart-button').addEventListener('click', startQuiz);

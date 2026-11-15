@@ -310,3 +310,160 @@ body:has(.bonus-dialog[open]) { overflow: hidden; }
   .photo, .intro-album .photo:hover, .result-photo:hover { transform: rotate(var(--photo-angle)); }
   .button-primary:not(:disabled):hover, .button-primary:not(:disabled):active, .button-primary:disabled, .answer-button:not(:disabled):hover, .answer-button:not(:disabled):active, .answer-button.is-correct, .answer-button.is-incorrect { transform: none; }
 }
+
+
+/* Larger, more comfortable typography and roomier quiz cards. */
+body { font-size: 17px; line-height: 1.72; }
+.brand { font-size: 29px; }
+.brand-caption { font-size: 11px; }
+.header-note { font-size: 14px; }
+.eyebrow { font-size: 13px; }
+.button { min-height: 60px; padding: 15px 27px; font-size: 16px; }
+.button-note { font-size: 13px; }
+.intro-description { font-size: 17px; }
+.rules-label { font-size: 25px; }
+.intro-rules p { font-size: 15px; }
+.quiz { max-width: 1120px; }
+.quiz-layout { grid-template-columns: minmax(0, 1fr) 290px; gap: 48px; }
+.question-card { padding: 40px; }
+.category { font-size: 12px; padding: 6px 13px; }
+.question-title { font-size: clamp(29px, 3vw, 38px); margin: 23px 0 27px; }
+.answer-instruction { font-size: 14px; margin-bottom: 15px; }
+.answers { gap: 13px; }
+.answer-button { min-height: 76px; padding: 17px 20px; font-size: 16px; gap: 16px; }
+.answer-label { flex-basis: 34px; height: 34px; font-size: 14px; }
+.feedback { min-height: 88px; font-size: 15px; }
+.feedback strong { font-size: 16px; }
+.next-hint { font-size: 13px; }
+.button-next { min-height: 52px; font-size: 15px; }
+.score-label { font-size: 14px; }
+.nose-heading h2 { font-size: 26px; }
+.nose-heading > span { font-size: 15px; }
+.nose-meter p { font-size: 14px; }
+.nose-scale { font-size: 12px; }
+.result-description { font-size: 17px; }
+.result-stats dt { font-size: 14px; }
+.answer-review summary { font-size: 16px; }
+.review-item h3 { font-size: 16px; }
+.review-item p { font-size: 15px; }
+.review-status { font-size: 12px; }
+.site-footer { font-size: 13px; }
+.bonus-content h2 { font-size: 38px; }
+.bonus-content > p:not(.eyebrow) { font-size: 15px; }
+
+.site-nav { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.nav-link { border: 1px solid transparent; border-radius: 999px; background: transparent; color: var(--muted); padding: 11px 16px; font: 600 14px/1.3 var(--sans); transition: background .18s, color .18s, border-color .18s; }
+.nav-link:hover { background: #ecebe3; color: var(--ink); }
+.nav-link.is-active { color: var(--blue-edge); background: #e5ece9; border-color: #d4ded8; }
+
+/* The breed guide uses the same scrapbook paper, blue and rose palette. */
+.features-page { padding: 54px 0 20px; }
+.features-hero { display: grid; grid-template-columns: minmax(0, 1fr) 320px; align-items: center; gap: 65px; padding: 10px 24px 44px; }
+.features-hero .eyebrow { margin-bottom: 23px; }
+.features-hero h1 { font-size: clamp(48px, 5vw, 68px); }
+.features-lead { max-width: 650px; margin-top: 25px; color: var(--muted); font-size: 19px; line-height: 1.85; }
+.features-hero-photo { --photo-angle: 4deg; width: 280px; justify-self: center; }
+.features-hero-photo .photo-mat { aspect-ratio: .95; }
+.features-intro-card { max-width: 970px; margin: 0 auto 62px; padding: 30px 36px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 3px 0 #eeeee5, 0 7px 0 #dfe2d8, 0 17px 30px #354b5a08; }
+.features-intro-card p { margin-top: 16px; font-size: 17px; line-height: 1.9; }
+.feature-section { padding: 48px 24px 58px; border-top: 1px dashed #c9cec6; }
+.feature-tinted { margin-inline: -24px; padding-inline: 48px; background: #eff1eb; border-radius: 5px; }
+.feature-heading { display: flex; align-items: center; gap: 22px; margin-bottom: 30px; }
+.feature-number { display: grid; place-items: center; flex: 0 0 58px; width: 58px; height: 58px; border: 1px solid #d6b8c0; border-radius: 50%; color: var(--pink-deep); background: #f6e9e9; font: italic 24px/1 var(--serif); }
+.feature-heading .eyebrow { margin-bottom: 5px; font-size: 12px; }
+.feature-heading h2 { font: 400 clamp(29px, 3.5vw, 42px)/1.2 var(--serif); letter-spacing: -.035em; }
+.feature-grid { display: grid; grid-template-columns: minmax(0, 1fr) 270px; align-items: center; gap: 38px; }
+.feature-card { padding: 29px 32px; background: var(--surface); border: 1px solid var(--line); border-radius: 13px; box-shadow: 0 3px 0 #e5e5dc, 0 8px 18px #354b5a08; }
+.feature-card p, .feature-note { color: #52616a; font-size: 16px; line-height: 1.9; }
+.feature-card p + p { margin-top: 15px; }
+.feature-card-wide { padding: 33px 36px; }
+.feature-photo { width: 230px; justify-self: center; --photo-angle: 3deg; }
+.feature-photo .photo-mat { aspect-ratio: .92; }
+.feature-photo-tall { width: 225px; }
+.feature-photo-tall .photo-mat { aspect-ratio: .8; }
+.breed-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; margin-top: 25px; }
+.breed-card { padding: 22px 23px; background: #f8f7f1; border: 1px solid #dfe1d8; border-radius: 11px; box-shadow: 0 3px 0 #e2e4db; }
+.breed-card h3, .care-card h3 { margin: 12px 0 8px; font: 400 23px/1.25 var(--serif); }
+.breed-card p { color: var(--muted); font-size: 15px; line-height: 1.7; }
+.feature-note { margin-top: 22px; padding-left: 19px; border-left: 2px solid #d8b5bf; }
+.tip-strip { display: grid; grid-template-columns: 175px minmax(0, 1fr); gap: 20px; align-items: start; margin-top: 25px; padding: 23px 27px; background: #f5e9e9; border: 1px solid #e8d3d7; border-radius: 10px; }
+.tip-strip strong { color: var(--pink-deep); font: italic 23px/1.3 var(--serif); }
+.tip-strip p { color: #5d6264; font-size: 15px; line-height: 1.8; }
+.section-lead { margin: -12px 0 25px 80px; color: var(--muted); font-size: 17px; }
+.care-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.care-card { position: relative; padding: 27px 29px 29px; background: var(--surface); border: 1px solid var(--line); border-radius: 13px; box-shadow: 0 3px 0 #e6e6dd, 0 8px 18px #354b5a08; }
+.care-icon { display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: #e8edef; color: var(--blue-deep); font: italic 16px var(--serif); }
+.care-card h3 { margin-top: 13px; }
+.care-card p { color: #58666c; font-size: 15px; line-height: 1.85; }
+.care-card p + p { margin-top: 12px; }
+.feature-banner-photo { width: 205px; margin: 37px auto 0; --photo-angle: -3deg; }
+.feature-banner-photo .photo-mat { aspect-ratio: 1.1; }
+.features-outro { display: flex; flex-direction: column; align-items: center; gap: 20px; max-width: 850px; margin: 48px auto 0; padding: 36px 45px; text-align: center; background: #f2e7e8; border: 1px solid #e7d5d8; border-radius: 14px; }
+.features-outro > svg { width: 58px; height: 38px; fill: none; stroke: var(--pink-deep); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.features-outro p { color: #5c6264; font: italic 21px/1.7 var(--serif); }
+.features-outro .button { margin-top: 4px; }
+
+@media (max-width: 1050px) {
+  .site-header { gap: 13px; }
+  .site-nav { gap: 2px; }
+  .nav-link { padding: 10px 11px; font-size: 13px; }
+  .features-hero { gap: 30px; grid-template-columns: minmax(0, 1fr) 260px; }
+  .features-hero-photo { width: 235px; }
+  .quiz-layout { grid-template-columns: minmax(0, 1fr) 250px; gap: 28px; }
+}
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  .site-header { min-height: 105px; flex-wrap: wrap; justify-content: space-between; padding: 13px 0; row-gap: 9px; }
+  .brand { font-size: 24px; }
+  .site-nav { order: 3; width: 100%; justify-content: center; }
+  .nav-link { padding: 9px 12px; font-size: 13px; }
+  .header-note { font-size: 12px; }
+  .quiz-layout { grid-template-columns: 1fr; }
+  .question-card { padding: 28px 24px; }
+  .question-title { font-size: clamp(27px, 6vw, 34px); }
+  .answer-button { min-height: 68px; font-size: 15px; padding: 14px; }
+  .answer-label { flex-basis: 31px; height: 31px; }
+  .features-page { padding-top: 32px; }
+  .features-hero { grid-template-columns: 1fr; gap: 22px; padding: 8px 4px 34px; }
+  .features-hero h1 { font-size: clamp(42px, 10vw, 58px); }
+  .features-lead { font-size: 17px; margin-top: 17px; }
+  .features-hero-photo { width: 215px; }
+  .features-intro-card { margin-bottom: 35px; padding: 24px; }
+  .features-intro-card p { font-size: 15px; }
+  .feature-section { padding: 34px 4px 40px; }
+  .feature-tinted { margin-inline: -12px; padding-inline: 20px; }
+  .feature-heading { gap: 14px; margin-bottom: 21px; }
+  .feature-number { flex-basis: 46px; width: 46px; height: 46px; font-size: 20px; }
+  .feature-heading h2 { font-size: 30px; }
+  .feature-heading .eyebrow { font-size: 10px; }
+  .feature-grid { grid-template-columns: 1fr; gap: 22px; }
+  .feature-card, .feature-card-wide { padding: 23px; }
+  .feature-card p, .feature-note { font-size: 15px; }
+  .feature-photo, .feature-photo-tall { width: 190px; }
+  .breed-cards, .care-grid { grid-template-columns: 1fr; }
+  .breed-card { padding: 19px; }
+  .tip-strip { grid-template-columns: 1fr; gap: 7px; padding: 20px; }
+  .tip-strip strong { font-size: 21px; }
+  .tip-strip p, .care-card p { font-size: 14px; }
+  .section-lead { margin: -6px 0 20px; font-size: 15px; }
+  .care-card { padding: 23px; }
+  .features-outro { padding: 27px 22px; }
+  .features-outro p { font-size: 18px; }
+}
+@media (max-width: 370px) {
+  .nav-link { padding: 8px 9px; font-size: 12px; }
+  .question-card { padding: 24px 18px; }
+}
+
+
+/* Дополнительные фотографии из материалов раздела «Особенности породы» */
+.breed-card { overflow: hidden; padding-top: 0; }
+.breed-card-image { display: block; width: calc(100% + 42px); max-width: none; height: 178px; margin: 0 -21px 18px; object-fit: cover; border-radius: 12px 12px 0 0; }
+.reference-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin: 28px 0 20px; }
+.reference-gallery figure { min-width: 0; margin: 0; padding: 9px 9px 12px; background: #fffdfa; border: 1px solid #e9dfd8; border-radius: 12px; box-shadow: 0 5px 16px rgba(75, 61, 52, .07); transform: rotate(-.35deg); }
+.reference-gallery figure:nth-child(even) { transform: rotate(.45deg); }
+.reference-gallery img { display: block; width: 100%; height: 190px; object-fit: cover; border-radius: 7px; background: #eee8e2; }
+.reference-gallery figcaption { padding: 9px 4px 0; color: #77716c; font: italic 14px/1.35 var(--serif); text-align: center; }
+.care-reference-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 760px) { .reference-gallery, .care-reference-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } .reference-gallery img { height: 150px; } .breed-card-image { height: 160px; } }
+@media (max-width: 420px) { .reference-gallery, .care-reference-gallery { grid-template-columns: 1fr; } .reference-gallery img { height: 210px; } }

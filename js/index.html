@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ee">
+  <meta name="description" content="16 вопросов про борзых, их привычки и длинные носы. Небольшой квиз без таймера, с хорошими собаками и мемами.">
+  <title>Нос к носу — квиз про борзых</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/questions.js" defer></script>
+  <script src="./js/app.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="cross" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="bow" viewBox="0 0 64 40"><path d="M30 19C20-3 3 2 8 15c3 7 17 9 22 4Zm4 0C44-3 61 2 56 15c-3 7-17 9-22 4ZM30 21c-2 9-8 13-15 14m19-14c2 9 8 13 15 14"/><ellipse cx="32" cy="20" rx="4" ry="5"/></symbol>
+  </svg>
+
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="Нос к носу — на главную">
+        <svg class="brand-dog" viewBox="0 0 76 48" fill="none" aria-hidden="true"><path d="M10 31c11-2 18-9 28-17 4-3 9-3 13-1l10 5c4 1 6 5 5 9l-2 13M11 31c-5 0-6 7 0 8l27 1c6 0 10-3 12-7m-2-17c-6 2-8 7-8 12 0 6 7 7 9 2l4-11"/><path d="M9 32c-4 0-4 5 0 5h5v-5H9Z" fill="currentColor"/><circle cx="35" cy="22" r="1.6" fill="currentColor"/></svg>
+        <span>нос к носу<span class="brand-caption">квиз про борзых</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <button class="nav-link is-active" type="button" data-screen-target="screen-start">Главная</button>
+        <button class="nav-link" type="button" data-screen-target="screen-features">Особенности породы</button>
+      </nav>
+      <span class="header-note"><span class="little-dot" aria-hidden="true"></span><span><span data-question-total>16</span> вопросов · без таймера</span></span>
+    </header>
+
+    <main id="main">
+      <section id="screen-start" class="screen intro" aria-labelledby="intro-title">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Для любителей длинных носов</p>
+          <h1 id="intro-title" class="title-relief" tabindex="-1">Длинный нос.<br><em>Большая любовь.</em></h1>
+          <p class="intro-description">16 вопросов про борзых: почему они мёрзнут, как быстро бегают и что вообще у них с носом.</p>
+          <button class="button button-primary" id="start-button" type="button">Начать квиз <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></button>
+          <p class="button-note">Без таймера. Можно ошибаться.</p>
+        </div>
+
+        <div class="intro-album" aria-label="Две борзые на фотографиях">
+          <span class="album-annotation annotation-top" aria-hidden="true">главный по носам</span>
+          <svg class="annotation-arrow" viewBox="0 0 80 58" fill="none" aria-hidden="true"><path d="M72 3C36 0 28 17 30 45m-11-9 11 11 11-11"/></svg>
+          <figure class="photo photo-main">
+            <span class="paper-tape" aria-hidden="true"></span>
+            <div class="photo-mat mat-blue"><img src="./assets/images/image copy 13.png" alt="Любопытная борзая с большим носом" width="1080" height="1920" fetchpriority="high"></div>
+            <figcaption>да, это мой хороший ракурс</figcaption>
+          </figure>
+          <figure class="photo photo-small">
+            <div class="photo-mat mat-pink"><img src="./assets/images/image copy 5.png" alt="Борзая в очках" width="1080" height="1920"></div>
+            <figcaption>я готовился</figcaption>
+          </figure>
+          <svg class="album-bow" aria-hidden="true"><use href="#bow"/></svg>
+          <span class="album-annotation annotation-bottom" aria-hidden="true">и его научный консультант</span>
+        </div>
+
+        <div class="intro-rules">
+          <span class="rules-label">Всё просто</span>
+          <p>Верный ответ — нос чуть длиннее.<br>Три верных подряд — мем в подарок.</p>
+          <svg class="rules-bow" aria-hidden="true"><use href="#bow"/></svg>
+        </div>
+      </section>
+
+      <section id="screen-quiz" class="screen quiz" aria-labelledby="question-title" hidden>
+        <div class="quiz-heading">
+          <p class="eyebrow">Вопрос <span id="question-number">01</span><span class="count-divider">/</span><span data-question-total>16</span></p>
+          <p class="score-label">Верных ответов <strong id="score">0</strong></p>
+        </div>
+        <ol id="progress" class="progress" aria-label="Прогресс квиза"></ol>
+        <div class="quiz-layout">
+          <div class="question-card">
+            <span id="question-category" class="category"></span>
+            <h1 id="question-title" class="question-title" tabindex="-1"></h1>
+            <p id="answer-instruction" class="answer-instruction">Выбери один ответ</p>
+            <div id="answers" class="answers" role="group" aria-labelledby="question-title" aria-describedby="answer-instruction"></div>
+            <div id="feedback" class="feedback" role="status" aria-live="polite" aria-atomic="true"></div>
+            <div class="question-bottom">
+              <span id="next-hint" class="next-hint">Никуда не торопимся</span>
+              <button id="next-button" class="button button-primary button-next" type="button" hidden>Дальше <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></button>
+            </div>
+          </div>
+          <aside class="companion" aria-label="Твой напарник и носомер">
+            <figure class="photo companion-photo">
+              <span class="paper-tape" aria-hidden="true"></span>
+              <div class="photo-mat mat-blue"><img id="companion-image" src="./assets/images/image copy 14.png" alt="Борзая ждёт твоего ответа" width="1080" height="1920"></div>
+              <figcaption id="companion-caption">думаем вместе</figcaption>
+            </figure>
+            <div class="nose-meter">
+              <div class="nose-heading"><h2>Носомер</h2><span><strong id="nose-value">0</strong> см</span></div>
+              <div id="nose-progress" class="nose-track" role="progressbar" aria-label="Длина носа" aria-valuemin="0" aria-valuemax="31" aria-valuenow="0"><span id="nose-fill" class="nose-fill"></span></div>
+              <div class="nose-scale" aria-hidden="true"><span>0</span><span>31 см</span></div>
+              <p>Каждый верный ответ<br>делает нос чуть длиннее.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+
+
+      <section id="screen-features" class="screen features-page" aria-labelledby="features-title" hidden>
+        <div class="features-hero">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Знакомимся поближе</p>
+            <h1 id="features-title" class="title-relief">Особенности <em>породы.</em></h1>
+            <p class="features-lead">Борзые — удивительное сочетание скорости, грации и спокойного домашнего нрава. Разберёмся, что делает этих собак особенными и как правильно о них заботиться.</p>
+          </div>
+          <figure class="photo features-hero-photo">
+            <span class="paper-tape" aria-hidden="true"></span>
+            <div class="photo-mat mat-blue"><img src="./assets/images/image copy 13.png" alt="Борзая с длинной узкой мордой"></div>
+            <figcaption>грация в каждом движении</figcaption>
+          </figure>
+        </div>
+
+        <div class="features-intro-card">
+          <span class="category">Кто такие борзые?</span>
+          <p>Борзые представляют собой особую группу охотничьих собак. Их главные отличительные черты — высокие скоростные качества, развитое зрение и характерное строение тела. На протяжении многих столетий их использовали для преследования и ловли зверя на открытой местности. В отличие от собак, ориентирующихся преимущественно на обоняние, борзые во время охоты полагаются главным образом на зрение: они быстро замечают движущуюся добычу и преследуют её на значительном расстоянии.</p>
+        </div>
+
+        <div class="feature-section">
+          <div class="feature-heading"><span class="feature-number">01</span><div><p class="eyebrow">Строение и внешность</p><h2>Созданы для скорости</h2></div></div>
+          <div class="feature-grid">
+            <article class="feature-card feature-card-wide">
+              <p>Для большинства борзых характерны вытянутая узкая голова, длинная шея, глубокая грудная клетка, подтянутый живот, длинные конечности и хорошо развитая мускулатура. Гибкая спина и сильные задние конечности помогают совершать широкие и быстрые движения, развивать скорость и сохранять манёвренность.</p>
+              <p>Внешняя хрупкость и стройность не должны вводить в заблуждение: тело борзой приспособлено к значительным физическим нагрузкам.</p>
+            </article>
+            <figure class="photo feature-photo feature-photo-tall"><div class="photo-mat mat-pink"><img src="./assets/images/image copy 21.png" alt="Русская псовая борзая"></div><figcaption>стройность и сила</figcaption></figure>
+          </div>
+          <div class="breed-cards">
+            <article class="breed-card"><img class="breed-card-image" src="https://images.openai.com/static-rsc-4/keVXpr5oRljDqe3e2enK3xV4JTPbwfOIWJomhT0StxqBSckRQWG9iVGZbzoe7RelZxJGqigJev-lQu4aIvvNeP7WhsG5Z54SMCojSep-Bbciw9OuBpKkO0MjzjAkvHGWqe-1t6p2ZNXgh_zdv1hgQZZzs2wLKyLCjWzwdQ5_vS0?purpose=inline" alt="Русская псовая борзая на прогулке" loading="lazy"><span class="category">Россия</span><h3>Русская псовая борзая</h3><p>Высокий рост и длинная волнистая шерсть.</p></article>
+            <article class="breed-card"><img class="breed-card-image" src="https://images.openai.com/static-rsc-4/DFmR3iIt6HrF_gbfO2oJHuRapsgGoa3MRL61-XhtahsgyZkUUjemeOB0JyUxxebWnwZZ97h2Vdftux7GSiVB5lCzXTSa8x0WbLClB0y3pdw94hwYsz3GflzNymU4ME4vt2Ib-lp1aDKu3_aP02VRA0AFfdf1A5JQCMKDQxu0Wr4?purpose=inline" alt="Грейхаунд — английская борзая" loading="lazy"><span class="category">Англия</span><h3>Грейхаунд</h3><p>Исключительная скорость и гладкая шерсть.</p></article>
+            <article class="breed-card"><img class="breed-card-image" src="https://images.openai.com/static-rsc-4/cnuaRw18O_M-vROvK7xPGLzjKdzqYe8jQ_Md0CFy9bY1d3WMBz1VFW3Lz5GZdrW4iC_Qwf0RgP3GVfXsQoHtwQ39aSEFxAumo2IYQVv3J2lghSfJTfdoVaETvvQ7cHRS-3NajnhJvoPKHm3OF4bYjGZkdu3iZ3Qbopkb85YghZJgeBwvbAFdtEPeOdUfx0Yx?purpose=inline" alt="Афганская борзая с длинной шерстью" loading="lazy"><span class="category">Афганистан</span><h3>Афганская борзая</h3><p>Длинный шелковистый шерстный покров.</p></article>
+          </div>
+
+          <div class="reference-gallery breed-reference-gallery" aria-label="Фотографии разных пород борзых">
+            <figure><img src="https://images.openai.com/static-rsc-4/L_55vclTLAarSoExCAA6t27y82LEoEE3cO0WLVMdRVnl4fJaQal82zy3L_bc3WQXRW9PTZJFmpAx7hVRqlo0O0oA0Tpst98SN-X3Q1UA-Ozqw62LIVCtcj4G033kCDOgMG6NwOA3WsC-GVqYJcNy05maLHYbtdmMWtBGb4KzcuxJncm1glzLMTrlu2hje9Ur?purpose=inline" alt="Русская псовая борзая" loading="lazy"><figcaption>Русская псовая борзая</figcaption></figure>
+            <figure><img src="https://images.openai.com/static-rsc-4/OrxT-uEBrbs6viknoG0sfYTNQ0688ZH6HnXF5ZZQ3ktbRYtmvgVAWiHi3_ecinw4s9qGoY00vc7YEU-yenM85mkKjQKDGku_WU-Jpn9DWaG0a5WP7LFE3GNLCxD9BC6dhsi10j_KrEMBI9UYNSuXJq5jq8mbvuUggyOtuLBuR-g?purpose=inline" alt="Грейхаунд" loading="lazy"><figcaption>Грейхаунд</figcaption></figure>
+            <figure><img src="https://images.openai.com/static-rsc-4/U2bCkWrteoC1_tnN0AKGxfDfo35QLAfoTNSVODe8WkXxWZbdu4jS744cLDZsz69YjlMjaecht4DysYHx9VvdoRusD1H7r7gzqat1T1h1X2uYOUcFy7JHVLORE102DqUUREOLfXEdFALfTq8zI-FX-YlbNiYRm0uANvwuXpfeWaU?purpose=inline" alt="Афганская борзая" loading="lazy"><figcaption>Афганская борзая</figcaption></figure>
+            <figure><img src="https://images.openai.com/static-rsc-4/V2T4v8OWOzvcl2-58SRjbjWlT57g3I2o5ol81qHcwW9dCO5-xIA3hT1She4MnhjXA8T6PEKWknhCY4e7NSZE-OIB-y1Zaqfuavfj5UO1orb65ZwsyxjTjpRTPCjGp1WiymliD5zPFZDGna9bETyiP2LM3Jh4e_8Fm3N3Ft2wAmg?purpose=inline" alt="Борзая в профиль" loading="lazy"><figcaption>Особенности силуэта</figcaption></figure>
+            <figure><img src="https://images.openai.com/static-rsc-4/MRsrjjqwFklGnPP4M_F91ABmN0gZx-u0JuqdRfucBjowoz3FRaIVIgAuFDmBqiucZR-kyYrafzNbrhUCw1ohw0yFYfaghscGh8lhKS4DvB3KF775chYURTCslTmorLX0YiWS3xAvi32fZMnlhWgIB7mJi6zwXgDPE2yv7jcZy8iVcrkN3HmPBG-ihBDmA2D1?purpose=inline" alt="Грейхаунд в стойке" loading="lazy"><figcaption>Строение грейхаунда</figcaption></figure>
+          </div>
+          <p class="feature-note">Породы различаются размерами, шерстью, характером и происхождением, но сохраняют общие черты, связанные с историческим предназначением и физиологическим строением.</p>
+        </div>
+
+        <div class="feature-section feature-tinted">
+          <div class="feature-heading"><span class="feature-number">02</span><div><p class="eyebrow">Поведение и темперамент</p><h2>Нежные дома, быстрые на прогулке</h2></div></div>
+          <div class="feature-grid">
+            <article class="feature-card"><p>По характеру борзые чаще всего спокойны, сдержанны и привязаны к человеку. Дома многие ведут себя тихо, любят отдыхать и находиться рядом с хозяевами. При этом они могут проявлять независимость и самостоятельность — это связано с историей их охотничьего использования.</p><p>Воспитание лучше строить на терпении, последовательности и положительном подкреплении. Грубость и чрезмерное давление могут навредить взаимодействию с собакой.</p></article>
+            <figure class="photo feature-photo"><div class="photo-mat mat-blue"><img src="./assets/images/image copy 14.png" alt="Борзая крупным планом"></div><figcaption>спокойный наблюдатель</figcaption></figure>
+          </div>
+          <div class="tip-strip"><strong>Важно помнить</strong><p>У борзых выражен охотничий инстинкт. Они могут резко среагировать на движущихся животных, птиц и другие объекты. Поэтому важны ранняя социализация и обучение базовым командам, особенно навыку возвращения к хозяину.</p></div>
+          <p class="feature-note">Даже хорошо обученную борзую не рекомендуется отпускать с поводка на открытой территории, где есть другие животные или дороги. Для свободного бега подходят специально оборудованные огороженные площадки.</p>
+        </div>
+
+        <div class="feature-section">
+          <div class="feature-heading"><span class="feature-number">03</span><div><p class="eyebrow">Ежедневная забота</p><h2>Особенности ухода</h2></div></div>
+          <p class="section-lead">Уход зависит от анатомического строения, типа шерсти и физиологических потребностей собаки.</p>
+          <div class="care-grid">
+            <article class="care-card"><span class="care-icon">01</span><h3>Шерсть и кожа</h3><p>У короткошёрстных борзых, например грейхаундов, достаточно периодического вычёсывания мягкой щёткой или специальной перчаткой. Купают по мере необходимости средствами для собак.</p><p>Длинношёрстных русских псовых и афганских борзых нужно регулярно расчёсывать, чтобы не образовывались колтуны. Особое внимание — участкам за ушами, на конечностях, животе и у хвоста. После прогулок стоит удалять репейники и веточки.</p></article>
+            <article class="care-card"><span class="care-icon">02</span><h3>Гигиена</h3><p>Регулярно осматривают уши и глаза, очищают их при загрязнении. Зубы чистят специальной щёткой и пастой для животных. Также следят за длиной когтей и при необходимости аккуратно подстригают их когтерезом.</p></article>
+            <article class="care-card"><span class="care-icon">03</span><h3>Тепло и отдых</h3><p>У борзых сравнительно тонкая кожа и мало подкожного жира. Особенно короткошёрстные собаки могут плохо переносить холод. В сырую и ветреную погоду важно ограничивать пребывание на улице, а осенью и зимой использовать одежду, защищающую грудь, спину и живот.</p><p>Дома собаке нужно собственное тёплое место с мягкой подстилкой или удобной лежанкой.</p></article>
+            <article class="care-card"><span class="care-icon">04</span><h3>Питание</h3><p>Рацион должен быть полноценным и сбалансированным, соответствовать возрасту, весу, здоровью и активности собаки. Это может быть качественный промышленный корм или правильно составленный натуральный рацион. Свежая вода должна быть доступна весь день.</p><p>У крупных борзых с глубокой грудной клеткой учитывают риск заворота желудка. Интенсивные нагрузки непосредственно до и после еды нежелательны; режим кормления лучше согласовать с ветеринаром.</p></article>
+          </div>
+
+          <div class="reference-gallery care-reference-gallery" aria-label="Фотографии ухода за борзыми">
+            <figure><img src="https://images.openai.com/static-rsc-4/yiTdGHM_MmNjLSqhXh5A3npYzShuJu_vqN_kftDdcGZy-_dvQtj30b7dMv9ZyruA-ZzHmWb_BWPN-7jWTJViMXOnRCQvMbccFDki9mEv16oIDFAQAHfowgmgn9IMYpPV50fZgy2J1fR6LJWtCSJEddU8L2xbwENNkuryfhsrvko?purpose=inline" alt="Короткошёрстный грейхаунд" loading="lazy"><figcaption>Уход за короткой шерстью</figcaption></figure>
+            <figure><img src="https://images.openai.com/static-rsc-4/WJHR1JK-YhHXW93UPs-nOQIKsAYimejQqzn-cyJEZS5Af2zbtLXqBxl_1RLVg3XflsLVjtpczQOWqZLf9FKP0YZzt8ZCQrzJzw1BmMyW3eyPCN5AejNDyylsRtAkYRxpRFdX39CcNsYgiNhRL0Sj25VNYLU2dLpVzOfrSb-6Z4Nx5oQA8jjFi0BXuAu3Und6?purpose=inline" alt="Груминг афганской борзой" loading="lazy"><figcaption>Расчёсывание длинной шерсти</figcaption></figure>
+            <figure><img src="https://images.openai.com/static-rsc-4/8ZKXBWAgyjrvQUkWzJlKOPNsbVAYgZqbGLlTKSNsUPbXJJ-YXt9LE7V29opSJiKpVrSbxtVBrOGp9s0XBi8kUzmelJwvHUItrnlQtTe3yca3d7mDuUrqMs8GRm6Vwm5EjHGI3WwyI1gSl4Ofg9nDFAumx3NZWrM4JOB_SMLwKSg?purpose=inline" alt="Борзая в домашней обстановке" loading="lazy"><figcaption>Комфорт и содержание</figcaption></figure>
+            <figure><img src="https://images.openai.com/static-rsc-4/_NQt-5MP0n_5tBcegLxAl_6ASCdcZU7hmEtreOU-CeJJMnATiYvRe-Uvp332CzXP15pNFvFjZ5ZMTg108lPrS-rj3ZCk1GPIKIQzpB5ObWGry_esehaDFLjkW_Iv3tDdn-lGpFUe95K84kVAsMVB9ykTMrpcN6GvF4kpFjsNO7k?purpose=inline" alt="Уход за шерстью грейхаунда" loading="lazy"><figcaption>Регулярный уход</figcaption></figure>
+            <figure><img src="https://images.openai.com/static-rsc-4/Q6dwhgAzC_3daaedd7R_ykN4NmhbRle16Ego6cgMVsCyXPtMzdYLQdIiFxOPw0xkO4LygoNNptZ_6rdnJONiTbaXOb6M9K0dnYjoH4o8oek7GDXdLP2Cej4jmqJ_YfxZ-6WIKnmDwmAnxpzyfJJipUZsjigGCSfdayDm0BVesUU?purpose=inline" alt="Средства для ухода за собакой" loading="lazy"><figcaption>Средства для груминга</figcaption></figure>
+            <figure><img src="https://images.openai.com/static-rsc-4/HtBgpJrRsGOBhcZXxUkR8Vi6Ug4ZA4EVp03w7hy9uRhBACMxY-4mDeuJUs6XGxpP1O9zEaVrfzzUnXobynUT4FG_FcM7oTBS44DHeEi7PTmbfa0wz781ZojKXbfVOoTRpQuZQIOQZ5WarD3KcCetoUP1UCjyDoxxQT2MboDFooS9m5xFXjnwgN3VdRXGfvZD?purpose=inline" alt="Процесс ухода за собакой" loading="lazy"><figcaption>Гигиенические процедуры</figcaption></figure>
+            <figure><img src="https://images.openai.com/static-rsc-4/cB8_L2YSx12DhX4rEYwhmrguZeYwUDaP2e-Fmj6rJ1f_EyNgCjJiNcP8-i3CwBLVBUwB3Ghg-ysHMYJ7BjxZZlyvbDyE0Us_2HnwE6l-9_QLTInOl3CTor53MqJUf9MIOSXxFMJEtcrJcbzcics5CtVkIIejWmPoKkAINzNzxhiLbLxZRmNlEor4UwV55dby?purpose=inline" alt="Груминг афганской борзой" loading="lazy"><figcaption>Уход за длинной шерстью</figcaption></figure>
+            <figure><img src="https://images.openai.com/static-rsc-4/lxl1pfFhABWGdVzCpemq1R-7HH4syAR-vhU4c7I_OHkwRa538m26yMlUVN_biotX2cY4rOfj__U6GtIbIUszeXMt9ZkaHQ6Aat40Y5fwdltoWIOuB3IVRyfTvwEf2vmC5yOF_yUYphQ0KQKsWZoXicCaJhfMR3_aH8kcYXKIQpU?purpose=inline" alt="Борзая после расчёсывания" loading="lazy"><figcaption>Шерсть после расчёсывания</figcaption></figure>
+            <figure><img src="https://images.openai.com/static-rsc-4/kxGj5eTvXZD4M3PCqJjNKEll56AdIgPqVLR5co2zMFqWXvDxeFWRj41Q7kbCcTJnuwZbRUjPEaz_UUtDGOWt5_w3sXLzFZqhW12oZ4bfNHrWiOeMRcc8O5jiLpEBZsV3JOZYwUQZotT7n1n9EhI8hhw1Rks--NtciXjtFKnAqPc2J6GUo717DYyPg6cAdOwU?purpose=inline" alt="Расчёсывание борзой" loading="lazy"><figcaption>Повседневный груминг</figcaption></figure>
+          </div>
+          <figure class="photo feature-banner-photo"><div class="photo-mat mat-pink"><img src="./assets/images/image copy 10.png" alt="Борзая после ухода"></div><figcaption>забота складывается из мелочей</figcaption></figure>
+        </div>
+
+        <div class="feature-section feature-tinted">
+          <div class="feature-heading"><span class="feature-number">04</span><div><p class="eyebrow">Движение и самочувствие</p><h2>Физическая активность и здоровье</h2></div></div>
+          <div class="feature-grid">
+            <article class="feature-card"><p>Борзым необходимы регулярные прогулки и возможность реализовывать природную потребность в движении. Обычные прогулки на поводке полезно сочетать с занятиями и свободным бегом на безопасной огороженной территории.</p><p>При этом борзым не всегда нужны долгие интенсивные тренировки: для многих характерно чередование коротких периодов высокой активности с продолжительным отдыхом. Молодых собак нельзя перегружать — нагрузки увеличивают постепенно, учитывая возраст и индивидуальные возможности.</p></article>
+            <figure class="photo feature-photo"><div class="photo-mat mat-blue"><img src="./assets/images/image copy 16.png" alt="Борзая в движении"></div><figcaption>время размяться</figcaption></figure>
+          </div>
+          <div class="tip-strip"><strong>Профилактика важна</strong><p>Здоровье зависит от содержания, питания и ветеринарной профилактики. В зависимости от породы могут встречаться наследственные проблемы с суставами, сердечно-сосудистой системой и зрением. Нужны регулярные осмотры, вакцинация и обработка от паразитов.</p></div>
+          <p class="feature-note">Для прогулок подбирают хорошо подогнанную шлейку или специальный ошейник с учётом узкой головы и длинной шеи. Обычный широкий ошейник может соскальзывать.</p>
+        </div>
+
+        <div class="feature-section">
+          <div class="feature-heading"><span class="feature-number">05</span><div><p class="eyebrow">Дом и воспитание</p><h2>Комфортная жизнь рядом с человеком</h2></div></div>
+          <div class="feature-grid">
+            <article class="feature-card"><p>Борзые могут жить как в частном доме, так и в городской квартире, если им обеспечены прогулки и достаточная активность. Несмотря на размеры, многие хорошо адаптируются к жизни в помещении и не отличаются чрезмерной шумностью.</p><p>Воспитание начинают с раннего возраста: важны социализация, знакомство с окружающей средой, людьми и животными, а также обучение базовым командам. Охотничий инстинкт всё равно может влиять на поведение при появлении потенциальной добычи.</p><p>Борзым необходимы спокойная обстановка, внимание хозяина, общение и возможность полноценно отдыхать. Длительная изоляция и недостаток контакта могут быть для них тяжёлыми.</p></article>
+            <figure class="photo feature-photo"><div class="photo-mat mat-pink"><img src="./assets/images/image copy 12.png" alt="Борзая рядом с человеком"></div><figcaption>лучше всего — вместе</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="features-outro">
+          <svg aria-hidden="true"><use href="#bow"/></svg>
+          <p>В борзых сочетаются природная скорость, выносливость, грациозность и уравновешенный характер. Понимание породных особенностей, внимательный уход, полноценное питание, движение и общение с человеком помогают обеспечить им комфортную жизнь.</p>
+          <button class="button button-primary" type="button" data-screen-target="screen-start">Вернуться к квизу <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></button>
+        </div>
+      </section>
+
+      <section id="screen-result" class="screen result" aria-labelledby="result-title" hidden>
+        <div class="result-layout">
+          <div class="result-copy">
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Все носы посчитаны</p>
+            <h1 id="result-title" class="title-relief" tabindex="-1"></h1>
+            <p id="result-description" class="result-description"></p>
+            <dl class="result-stats">
+              <div><dt>Верных ответов</dt><dd><span id="result-score">0</span><span class="stat-total"> / <span data-question-total>16</span></span></dd></div>
+              <div><dt>Длина носа</dt><dd><span id="result-nose">0</span><span class="stat-total"> см</span></dd></div>
+            </dl>
+            <div class="result-actions">
+              <button id="restart-button" class="button button-primary" type="button">Пройти ещё раз <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></button>
+              <button id="home-button" class="button button-text" type="button">На главную</button>
+            </div>
+          </div>
+          <figure class="photo result-photo">
+            <span class="paper-tape" aria-hidden="true"></span>
+            <div class="photo-mat mat-pink"><img id="result-image" src="./assets/images/image copy 8.png" alt="Довольная борзая" width="1080" height="1920"></div>
+            <figcaption>в любом случае, ты мой человек</figcaption>
+          </figure>
+        </div>
+        <details id="answer-review" class="answer-review">
+          <summary>Посмотреть ответы <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></summary>
+          <ol id="review-list" class="review-list"></ol>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer"><svg aria-hidden="true"><use href="#bow"/></svg><span>Маленький квиз для любителей борзых</span></footer>
+  </div>
+
+  <dialog id="bonus-dialog" class="bonus-dialog" aria-labelledby="bonus-title" aria-describedby="bonus-description">
+    <div class="bonus-content">
+      <button id="bonus-close" class="button-close" type="button" aria-label="Закрыть мем и продолжить"><svg class="icon" aria-hidden="true"><use href="#cross"/></svg></button>
+      <p class="eyebrow">Маленький перерыв</p>
+      <h2 id="bonus-title">Этот мем — тебе.</h2>
+      <p id="bonus-description">За три верных ответа подряд.</p>
+      <img id="bonus-image" class="bonus-image" alt="" width="736" height="727">
+      <button id="bonus-continue" class="button button-primary" type="button">Идём дальше <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></button>
+    </div>
+  </dialog>
+  <noscript><p class="noscript-message">Для квиза нужен JavaScript. Включи его в настройках браузера и обнови страницу.</p></noscript>
+</body>
+</html>
