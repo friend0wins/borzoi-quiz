@@ -467,3 +467,24 @@ body { font-size: 17px; line-height: 1.72; }
 .care-reference-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 @media (max-width: 760px) { .reference-gallery, .care-reference-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } .reference-gallery img { height: 150px; } .breed-card-image { height: 160px; } }
 @media (max-width: 420px) { .reference-gallery, .care-reference-gallery { grid-template-columns: 1fr; } .reference-gallery img { height: 210px; } }
+
+/* Полный каталог пород борзых */
+.breed-directory { margin-top: 28px; }
+.breed-group-heading { margin: 8px 0 22px; padding: 22px 25px; background: #f5f1e9; border: 1px solid #e6dfd5; border-radius: 13px; }
+.breed-group-heading h3 { margin: 5px 0 7px; font: 400 30px/1.2 var(--serif); }
+.breed-group-heading > p:last-child { margin: 0; color: var(--muted); font-size: 16px; }
+.breed-group-title { margin: 27px 0 13px; font: 400 23px/1.25 var(--serif); color: var(--ink); }
+.breed-cards { align-items: stretch; }
+.breed-card-complete { display: flex; flex-direction: column; min-width: 0; }
+.breed-card-complete .category { align-self: flex-start; }
+.breed-card-complete h3 { font-size: 21px; }
+.breed-card-complete p { flex: 1; }
+.national-breeds { margin-top: 30px; padding: 23px 25px; background: #f8f7f1; border: 1px solid #e4e1d8; border-radius: 13px; }
+.national-breeds h4 { margin: 0 0 8px; font: 400 23px/1.25 var(--serif); }
+.national-breeds > p { color: var(--muted); font-size: 15px; }
+.national-breed-list { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 15px; }
+.national-breed-list article { padding: 15px; background: #fffdfa; border: 1px solid #e9dfd8; border-radius: 10px; }
+.national-breed-list strong, .national-breed-list span { display: block; }
+.national-breed-list strong { margin-bottom: 7px; font: 400 18px/1.25 var(--serif); }
+.national-breed-list span { color: var(--muted); font-size: 14px; line-height: 1.6; }
+@media (max-width: 760px) { .national-breed-list { grid-template-columns: 1fr; } .breed-group-heading { padding: 18px; } }
